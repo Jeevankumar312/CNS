@@ -1,0 +1,105 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Live Host Detection</title>
+</head>
+<body>
+    <h2>Detect Live Hosts</h2>
+    <form method="post">
+        Enter your local IP: <input name="local_ip" required>
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if hosts %}
+        <h3>Live Hosts</h3>
+        <ul>
+            {% for host in hosts %}
+                <li>{{ host.ip }} | {{ host.mac }} | {{ host.vendor }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Host Detection</title>
+</head>
+<body>
+    <h2>Detect Live Hosts</h2>
+    <form method="post">
+        Enter your local IP: <input name="local_ip" required>
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if hosts %}
+        <h3>Live Hosts</h3>
+        <ul>
+            {% for host in hosts %}
+                <li>{{ host.ip }} | {{ host.mac }} | {{ host.vendor }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No live hosts detected or scan not run yet.</p>
+    {% endif %}
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Host Detection</title>
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Detect Live Hosts</h2>
+    <form method="post">
+        Enter your local IP: <input name="local_ip" required>
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if hosts %}
+        <h3>Live Hosts</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>IP Address</th>
+                    <th>MAC Address</th>
+                    <th>Vendor</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for host in hosts %}
+                <tr>
+                    <td>{{ host.ip }}</td>
+                    <td>{{ host.mac }}</td>
+                    <td>{{ host.vendor }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No live hosts detected or scan not run yet.</p>
+    {% endif %}
+</body>
+</html>
