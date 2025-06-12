@@ -1,6 +1,7 @@
 import ipaddress
 from scapy.all import ARP, Ether, srp
 from mac_vendor_lookup import MacLookup
+MacLookup().update_vendors()
 
 def get_mac_vendor(mac):   
     try:
